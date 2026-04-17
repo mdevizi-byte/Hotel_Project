@@ -9,8 +9,8 @@ import java.util.Properties;
 
 public class DatabaseConnection {
     private static final String DEFAULT_URL = "jdbc:mysql://localhost:3306/DB_hotel";
-    private static final String PLACEHOLDER_USER = "tuo_username";
-    private static final String PLACEHOLDER_PASSWORD = "tua_password";
+    private static final String PLACEHOLDER_USER = "sez";
+    private static final String PLACEHOLDER_PASSWORD = "def";
 
     private static final Properties DB_PROPS = loadProperties();
 

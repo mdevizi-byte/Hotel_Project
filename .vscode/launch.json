@@ -15,7 +15,8 @@
             "name": "Main",
             "request": "launch",
             "mainClass": "com.example.Main",
-            "projectName": "demo"
+            "projectName": "demo",
+            "cwd": "${workspaceFolder}/demo"
         }
     ]
 }
