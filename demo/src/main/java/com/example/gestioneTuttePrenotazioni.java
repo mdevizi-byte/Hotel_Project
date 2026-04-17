@@ -29,7 +29,8 @@ public class gestioneTuttePrenotazioni {
             }
 
         } catch (SQLException e) {
-            System.out.println("Errore durante la lettura prenotazioni: " + e.getMessage());
+            System.out.println("DB non disponibile, mostro le prenotazioni salvate in memoria.");
+            InMemoryHotelStore.stampaPrenotazioni();
         }
     }
 }

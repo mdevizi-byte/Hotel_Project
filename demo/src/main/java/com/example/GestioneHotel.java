@@ -17,7 +17,8 @@ public class GestioneHotel {
             System.out.println("Ospite salvato!");
 
         } catch (SQLException e) {
-            System.out.println("Errore durante il salvataggio ospite: " + e.getMessage());
+            int idFallback = InMemoryHotelStore.aggiungiOspite(nome, cognome);
+            System.out.println("DB non disponibile, ospite salvato in memoria con ID: " + idFallback);
         }
     }
 }
