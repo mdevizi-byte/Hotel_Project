@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import java.util.Properties;
 
 public class DatabaseConnection {
-    private static final String DEFAULT_URL = "jdbc:mysql://localhost:3306/DB_Hotel";
+    private static final String DEFAULT_URL = "jdbc:mysql://localhost:3306/DB_hotel";
     private static final String PLACEHOLDER_USER = "tuo_username";
     private static final String PLACEHOLDER_PASSWORD = "tua_password";
 

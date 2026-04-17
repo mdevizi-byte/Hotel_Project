@@ -17,7 +17,7 @@ public class GestioneHotel {
             System.out.println("Ospite salvato!");
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println("Errore durante il salvataggio ospite: " + e.getMessage());
         }
     }
 }

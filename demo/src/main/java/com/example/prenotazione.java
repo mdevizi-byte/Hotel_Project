@@ -18,7 +18,7 @@ public class prenotazione {
         System.out.println("Prenotazione effettuata!");
         
     } catch (SQLException e) {
-        e.printStackTrace();
+        System.out.println("Errore durante la prenotazione: " + e.getMessage());
     }
 }
     

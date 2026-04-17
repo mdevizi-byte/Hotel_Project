@@ -1,5 +1,6 @@
 package com.example;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
@@ -18,6 +19,17 @@ public class Main {
             System.out.println("4. Esci");
             System.out.print("Scegli un'operazione: ");
 
+            if (!scanner.hasNextInt()) {
+                if (!scanner.hasNext()) {
+                    System.out.println("Input terminato, chiusura programma.");
+                    break;
+                }
+
+                System.out.println("Inserisci un numero tra 1 e 4.");
+                scanner.nextLine();
+                continue;
+            }
+
             int scelta = scanner.nextInt();
             scanner.nextLine(); // Consuma l'invio a capo
 
@@ -30,18 +42,23 @@ public class Main {
                     gestioneHotel.inserisciOspite(nome, cognome);
                     break;
                 case 2:
-                    System.out.print("ID ospite: ");
-                    int idOspite = scanner.nextInt();
-                    scanner.nextLine();
+                    try {
+                        System.out.print("ID ospite: ");
+                        int idOspite = scanner.nextInt();
+                        scanner.nextLine();
 
-                    System.out.print("Numero camera: ");
-                    int numeroCamera = scanner.nextInt();
-                    scanner.nextLine();
+                        System.out.print("Numero camera: ");
+                        int numeroCamera = scanner.nextInt();
+                        scanner.nextLine();
 
-                    System.out.print("Data prenotazione (YYYY-MM-DD): ");
-                    String dataPrenotazione = scanner.nextLine();
+                        System.out.print("Data prenotazione (YYYY-MM-DD): ");
+                        String dataPrenotazione = scanner.nextLine();
 
-                    gestionePrenotazione.prenota(idOspite, numeroCamera, dataPrenotazione);
+                        gestionePrenotazione.prenota(idOspite, numeroCamera, dataPrenotazione);
+                    } catch (InputMismatchException e) {
+                        System.out.println("ID ospite e numero camera devono essere numeri interi.");
+                        scanner.nextLine();
+                    }
                     break;
                 case 3:
                     reportPrenotazioni.mostraPrenotazioni();
